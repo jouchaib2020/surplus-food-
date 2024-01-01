@@ -1,13 +1,6 @@
 const router = require('express').Router();
 const passport = require('passport');
 
-const { errorFormatter } = require('./utils');
-const {isLoggedIn} = require('./auth');
-
-router.get('/', (req, res) => {
-  res.json({ message: 'Hello World!' });
-});
-
 // POST /auth/sessions 
 // This route is used for performing login.
 router.post('/auth/sessions', function(req, res, next) {
@@ -47,4 +40,4 @@ router.post('/auth/sessions', function(req, res, next) {
     });
   });
 
-exports.router = router;
+module.exports = router;

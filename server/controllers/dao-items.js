@@ -2,7 +2,7 @@
 
 /* Data Access Object (DAO) module for accessing films data */
 
-const db = require('./db');
+const db = require('../db/db');
 const dayjs = require("dayjs");
 
 const filters = {

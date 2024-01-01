@@ -26,7 +26,7 @@ const LocalStrategy = require('passport-local');                   // authentica
 // Creating the session 
 const session = require('express-session');
 const { verify } = require('./auth');
-const { router } = require('./routes');
+const { router } = require('./routes/routes');
 
 app.use(session({
   secret: "secret!",

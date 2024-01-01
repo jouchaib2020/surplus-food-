@@ -19,13 +19,13 @@ DELETE http://localhost:3001/api/sessions/current HTTP/1.1
 ###
 
 
-## Retrieving all the films.
-GET http://localhost:3001/api/films HTTP/1.1
+## Retrieving all the establishments .
+GET http://localhost:3001/api/establishments HTTP/1.1
 ###
 
-## Retrieving a specific film specifing its ID.
+## Retrieving a specific establishments specifing its ID.
 ## If the film does not belong to the current logged-in user is not returned.
-GET http://localhost:3001/api/films/{{$randomInt 1 6}} HTTP/1.1
+GET http://localhost:3001/api/establishments/{{$randomInt 1 6}} HTTP/1.1
 ###
 
 

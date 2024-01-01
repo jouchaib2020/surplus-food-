@@ -1,4 +1,4 @@
-const userDao = require('./dao-users');
+const userDao = require('./controllers/dao-users');
 module.exports = {
     verify: async (username, password, callback) => {
             const user = await userDao.getUser(username, password)
