@@ -3,7 +3,7 @@ const passport = require('passport');
 
 // POST /auth/sessions 
 // This route is used for performing login.
-router.post('/auth/sessions', function(req, res, next) {
+router.post('/sessions', function(req, res, next) {
     passport.authenticate('local', (err, user, info) => { 
       if (err)
         return next(err);
@@ -25,7 +25,7 @@ router.post('/auth/sessions', function(req, res, next) {
   
   // GET /auth/sessions/current
   // This route checks whether the user is logged in or not.
-  router.get('/auth/sessions/current', (req, res) => {
+  router.get('/sessions/current', (req, res) => {
     if(req.isAuthenticated()) {
       res.status(200).json(req.user);}
     else
@@ -34,7 +34,7 @@ router.post('/auth/sessions', function(req, res, next) {
   
   // DELETE /auth/session/current
   // This route is used for loggin out the current user.
-  router.delete('/auth/sessions/current', (req, res) => {
+  router.delete('/sessions/current', (req, res) => {
     req.logout(() => {
       res.status(200).json({});
     });

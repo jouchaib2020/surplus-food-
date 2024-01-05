@@ -5,7 +5,7 @@
 const sqlite = require('sqlite3');
 
 // open the database
-const db = new sqlite.Database('inventory.db', (err) => {
+const db = new sqlite.Database('db/sqlite.db', (err) => {
   
   if (err) throw err;
 });

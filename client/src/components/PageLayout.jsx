@@ -1,12 +1,13 @@
-import { React } from 'react';
-import { Button, Col, Row } from 'react-bootstrap';
+import { useState } from 'react';
+import { Button, Col, Container, Row } from 'react-bootstrap';
 import { Link, Outlet } from 'react-router-dom';
 
 import { LoginForm } from './Auth';
-
+import BagModal from './BagModal';
+import RestaurantCard from './RestaurantCard';
 
 function DefaultLayout() {
-  
+
   return (
     <Row className="vh-100">
       <Col md={4} xl={3} bg="light" className="below-nav" id="left-sidebar">
@@ -20,10 +21,23 @@ function DefaultLayout() {
 }
 
 function MainLayout() {
+  const [modalShow, setModalShow] = useState(false);
   return (
-    <h1> 
-      Hello wordl 🎊🎊🎊🎊🎊
-    </h1>
+    <>
+    <Container style={{display: "grid", gridTemplateColumns: "repeat(3, 1fr)",}}> 
+      {[1,2,3,4,5,6,7,8,9,10].map((item) => (
+        <Row key={item}>
+          <RestaurantCard setModalShow={setModalShow}/>
+        </Row>
+      ))
+      }
+    </Container>
+
+    <BagModal
+    show={modalShow}
+    onHide={() => setModalShow(false)}
+    />
+  </>
   )
 }
 
